@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>X-Team</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/libraries/aos.css">
+    <link rel="stylesheet" href="css/libraries/bootstrap.min.css">
+    <link rel="stylesheet" href="F-awesome/all.min.css">
+    <link rel="stylesheet" href="F-awesome/fontawesome.min.css">
+    <link rel="stylesheet" href="css/libraries/hover-min.css" media="all">
+    <link rel="stylesheet" href="css/libraries/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/libraries/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/libraries/animate.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <!-- navigation -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg align-items-center navbar-light bg-white shadow fixed-top">
+            <div class="container">
+                <!-- logo -->
+                <a class="navbar-brand col-sm-12 col-lg-auto text-center" href="#">NADA<i class="fas fa-heart fs-6"></i></a>
+    
+                <!-- toggler -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- start navigation menu -->
+                <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav align-content-center mx-3 mx-lg-auto display-6 px-3 px-lg-0">
+                        <li class="nav-item ">
+                            <a class="nav-link hvr-underline-from-center" href="#">
+                                HOME
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link hvr-underline-from-center" href="about.html">
+                                ABOUT
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link hvr-underline-from-center" href="shop.html">
+                                SHOP
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link hvr-underline-from-center" href="portfolio.html">
+                                PORTFOLIO
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle hvr-underline-from-center" href="#" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-expanded="false">
+                                DROPDOWN
+                            </a>
+                            <div class="dropdown-menu mx-2 mx-lg-0 shadow border-0" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+    
+                        <li class="nav-item ">
+                            <a class="nav-link hvr-underline-from-center" href="contact.html">
+                                CONTACT
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end navigation menu-->
+    
+                <!-- start login & register  -->
+                <div class="login-menu mx-auto d-none d-lg-block">
+                    <a class="mx-1 " data-toggle="modal" data-target="#login" href="#">LOGIN</a>
+                    <a class="">/</a>
+                    <a class="mx-1" data-toggle="modal" data-target="#register" href="#">REGISTER</a>
+                </div>
+                <!-- end login & register  -->
+    
+                <!-- start shopping  -->
+                <div class="right-menu mx-3 d-sm-block h4 my-auto ">
+                    <a href="#" class="mx-1 cart-link" data-toggle="modal" data-target="#search">
+                        <i class="fas fa-search fs-4"></i>
+                    </a>
+                    <a href="fav.html" class="mx-1 position-relative">
+                        <i class="far fa-heart fs-4"></i>
+                        <span class="cart-1">0</span>
+                    </a>
+    
+                    <span class="shop open-cart mx-1 position-relative">
+                        <i class="fas fa-bag-shopping fs-4 "></i>
+                        <span class="cart"></span>
+                    </span>
+                </div>
+                <!-- end shopping  -->
+            </div>
+        </nav>
+    </header>
+    <div class="nav-fix"></div>
+    <!-- navigation -->
+
+    <!-- mini cart  -->
+    <div class="mini-cart bg-light shadow row align-content-start" >
+        <div class="col-12 p-0">
+            <div class="cart-title row justify-content-between align-items-center py-4 border-bottom  mx-0 px-4 mb-1">
+                <div class="h5 text-uppercase c-title">Shopping cart</div>
+                <i class="fa fa-close hvr-buzz-out h3 close-cart"></i>
+            </div>
+        </div>
+        <div class="products col-12">
+    
+        </div>
+        <div class="col-12">
+            <div class="row align-items-center justify-content-between total-cost px-5 border-danger border-top pt-2">
+                
+            </div>
+        </div>
+        <div class="col-12 text-center view-cart mt-3">
+            <a href="cart.html">
+                <button class="btn btn-danger">View Cart</button>
+            </a>
+        </div>
+        <div class="col-12 text-center view-cart mt-3">
+            <a href="cart.html">
+                <button class="btn btn-primary">Check Out</button>
+            </a>
+        </div>
+    </div>
+    <!-- mini cart  -->
+
+    <!-- overlay  -->
+    <div class="overlay" ></div>
+    <!-- overlay  -->
+    <!-- login Modal -->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger">
+                    <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- login Modal -->
+    
+    <!-- register Modal -->
+    <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger">
+                    <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Password</label>
+                                <input type="password" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>Ahmed Palestine</option>
+                                    <option>Manar Egypt</option>
+                                    <option>Omnia Egypt</option>
+                                    <option>Adel Egypt</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Accept all conditions.
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- register Modal -->
+    
+    <!-- all lage screen -->
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-none d-lg-block d-md-block">
+                    <div class="card0">
+                        <div class="cardcontent">
+                            <h1>Womens fashion</h1>
+                            <p>299 items</p>
+                            <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-none d-lg-block d-md-block">
+                    <div class="card1">
+                        <div class="cardcontent1">
+                            <h1>Kids fashion</h1>
+                            <p>273 items</p>
+                            <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 d-none d-lg-block d-md-block">
+                    <div class="card2">
+                        <div class="cardcontent2">
+                            <h1>jeans</h1>
+                            <p>159items</p>
+                            <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 d-none d-lg-block d-md-block">
+                    <div class="card3">
+                        <div class="cardcontent3">
+                            <h1>dresses</h1>
+                            <p>103 items</p>
+                            <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12 d-none d-lg-block d-md-block">
+                    <div class="card4">
+                        <div class="cardcontent4">
+                            <h1>sporty</h1>
+                            <p>792 items</p>
+                            <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- large screen end here -->
+        <!-- carousel for small screen -->
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+                <li data-target="#demo" data-slide-to="4"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carouselimg"></div>
+                    <div class="carousel-caption">
+                        <h1>Womens fashion</h1>
+                        <p>299 items</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg1"></div>
+                    <div class="carousel-caption">
+                        <h1>Kids fashion</h1>
+                        <p>273 items</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg2"></div>
+                    <div class="carousel-caption">
+                        <h1>jeans</h1>
+                        <p>159items</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg3"></div>
+                    <div class="carousel-caption">
+                        <h1>dresses</h1>
+                        <p>103 items</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg4"></div>
+                    <div class="carousel-caption">
+                        <h1>sporty</h1>
+                        <p>792 items</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </section>
+    <!-- carousel end here -->
+
+    <!-- second nav bar start here -->
+    <nav class="navbar navbar-expand-md align-items-center navbar-light bg-transparent container">
+        <a class="navbar-brand" href="#">NEW Products</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Womens</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kids</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">jeans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sporty</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">dresses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Others</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <!-- second nav bar end here -->
+    
+    <!-- third section cards -->
+    <br class="d-none d-lg-block d-md-block d-sm-block">
+    <section>
+        <div class="container">
+            <div class="row products-holder">
+                
+            </div>
+        </div>
+        <!-- third section end -->
+        <!-- second carousel for small screen -->
+        <div id="secondcarousel" class="carousel slide d-sm-none" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#secondcarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#secondcarousel" data-slide-to="1"></li>
+                <li data-target="#secondcarousel" data-slide-to="2"></li>
+                <li data-target="#secondcarousel" data-slide-to="3"></li>
+                <li data-target="#secondcarousel" data-slide-to="4"></li>
+                <li data-target="#secondcarousel" data-slide-to="5"></li>
+                <li data-target="#secondcarousel" data-slide-to="6"></li>
+                <li data-target="#secondcarousel" data-slide-to="7"></li>
+                <li data-target="#secondcarousel" data-slide-to="8"></li>
+                <li data-target="#secondcarousel" data-slide-to="9"></li>
+                <li data-target="#secondcarousel" data-slide-to="10"></li>
+                <li data-target="#secondcarousel" data-slide-to="11"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carouselimg5"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg6"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg7"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg8"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg9"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg10"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg11"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg12"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg13"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg14"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carouselimg15"></div>
+                    <div class="carousel-caption">
+                        <h2 class="thirdsectionh2">Sporty</h2>
+                        <h2 class="thirdsectionh2">$59.0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#secondcarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#secondcarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </section>
+    <!-- second carousel end here -->
+
+    <!-- forth section start here -->
+    <section class="fsection">
+        <div>
+            <h1>The cool collection</h1>
+            <h2>new</h2>
+            <h3><a href="#">SHOP NOW</a></h3>
+        </div>
+    </section>
+
+
+    <!-- start footer -->
+    <footer class="Footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 frist-footer-list">
+                    <h1>navbar</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos magni quaerat vel, perferendis
+                        voluptatibus amet nihil quasi odio explicabo recusandae placeat sit commodi ipsam vero. Itaque
+                        dolores eaque placeat minima!</p>
+                </div>
+    
+                <div class="col-md-6 col-lg-3 second-footer-list text-left">
+                    <h2>quick links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+    
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 third-footer-list text-left">
+                    <h2>account</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#">my account</a></li>
+                        <li><a href="#">order traking</a></li>
+                        <li><a href="#">cheackout</a></li>
+                        <li><a href="#">welises</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 fourth-footer-list text-left">
+                    <h2>news letter</h2>
+                    <form action="#" method="post">
+                        <input type="email" class="btn1" placeholder="E-mail">
+                        <input type="button" value="subscrib" class="btn">
+                    </form>
+                    <ul class="list-unstyled fourth text-left">
+                        <li class="text-center"><a href="#"><i class="fab fa-facebook-f  rounded-circle"></i></a></li>
+                        <li class="text-center"><a href="#"><i class="fab fa-twitter  rounded-circle"></i></a></li>
+                        <li class="text-center"><a href="#"><i class="fab fa-youtube  rounded-circle"></i></a></li>
+                        <li class="text-center"><a href="#"><i class="fab fa-instagram  rounded-circle"></i></a></li>
+                        <li class="text-center"><a href="#"><i class="fab fa-whatsapp  rounded-circle"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/data.js"></script>
+    
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
