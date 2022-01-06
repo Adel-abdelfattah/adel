@@ -122,9 +122,32 @@ header .right-menu .cart-1 {
   transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
+.mini-cart .cart-title .close-cart {
+  cursor: pointer;
+}
+
+.mini-cart .view-cart a {
+  display: inline-block;
+  width: 100%;
+}
+
+.mini-cart .view-cart a .btn {
+  width: 80%;
+  border-radius: 20px;
+}
+
+.mini-cart .products {
+  overflow-y: scroll;
+  height: 60vh;
+}
+
 .mini-cart .products .cart-item img {
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 160px;
+}
+
+.mini-cart .products .cart-item .dec {
+  cursor: pointer;
 }
 
 .overlay {

@@ -121,15 +121,41 @@ header{
     background-color: #fff;
     
     transition: transform .3s ease-in-out;
-    .products {
-        .cart-item {
-            
-          img {
-              width: 50px;
-              height: 50px;
+    
+    .cart-title{
+        
+        .c-title {
+
+        }
+        .close-cart {
+            cursor: pointer;
+        }
+    }
+    
+    .view-cart {
+        a {
+            display: inline-block;
+            width: 100%;
+            .btn {
+                width: 80%;
+                border-radius: 20px;
             }
         }
     }
+    .products {
+        overflow-y: scroll;
+        height: 60vh;
+        .cart-item {
+            
+            img{
+                width: 150px;
+                height: 160px;
+            }
+            .dec{
+                cursor: pointer;
+            }
+        }
+      }
 }
 
 
