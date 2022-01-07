@@ -178,29 +178,48 @@ header{
 // end header 
 
 
- 
 
-.card{
-    .card-body{
-        h2{
-            cursor: pointer;
-        }
+
+
+.card-carousel {
+    cursor: pointer;
+    width: 100%;
+    img {
+        height: 300px;
+        transition: all 1s;
     }
-}
-.product-holder{
-    tr{
-        td{
-            img{
-                width: 100px;
-                height: 100px;
+    .bton-grp {
+        display: flex;
+        max-width: 100%;
+        height: 50px;
+        padding: 0 5px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 50;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        button {
+            border-radius: 50%;
+            i{
+               font-size: 20px; 
             }
         }
     }
+    &:hover {
+        .bton-grp{
+            opacity: 1;
+            visibility: visible;
+            top: 50%;
+        }
+        img {
+            transform: scale(1.1, 1.1);
+        }
+    }
 }
-.carousel-p {
-    color: #B750F3;
-    font-family: 'Poppins', sans-serif;
-}
+
 
 
 

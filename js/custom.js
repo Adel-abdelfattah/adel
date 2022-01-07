@@ -29,17 +29,23 @@ $(".close-cart").on("click", function(){
 function drawProducts () {
     let productsUI = products.map((item) => {
         return `
-        <div class="col-lg-3 col-md-4 col-sm-6 d-none d-sm-block">
-            <div class="card" style="width: 100%;">
-                <img src="${item.imgUrl}" class="card-img-top" alt="sporty" height="350px">
-                <div class="card-body">
-                    <h2 onclick="saveItemData(${item.id})" class="card-title text-center small">${item.title}</h2>
-                    <p class="card-text text-center small"><img src="${item.starImgUrl}" width="100rem"></p>
-                    <h2 class="card-text text-center small">$${item.price}</h2>
-                    <button class="add-cart btn btn-danger" onclick="addToCart(${item.id})"><i class="fas fa-plus mr-2"></i>add to cart</button>
-                    <button class="add-cart btn btn-danger" onclick="addToFav(${item.id})"><i class="fas fa-plus mr-2"></i>add to fav</button>
+        <div class="col-lg-3 col-md-4 col-sm-6 d-none d-sm-block px-3 mt-3">
+        <div class="row mx-0">
+            <div class="overflow-hidden position-relative card-carousel col-12 px-0">
+                <img src="${item.imgUrl}"  alt="sporty" class="w-100" >
+                <div class="bton-grp position-absolute d-flex justify-content-between">
+                    <button class="add-cart btn btn-danger px-3 py-1 mx-1" onclick="addToCart(${item.id})"><i class="fas fa-shopping-bag  "></i></button>
+                    <button class="add-cart btn btn-danger px-3 py-1 mx-1" onclick="addToFav(${item.id})"><i class="fas fa-heart"></i></button>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="row">
+                    <h5 onclick="saveItemData(${item.id})" class="col-12 pl-2">${item.title}</h5>
+                    <h5 class="col-6 px-0 w-100"><img src="${item.starImgUrl}" class="w-100"></h5>
+                    <h2 class="col-6 text-success align-middle">$${item.price}</h2>
+                </div>
+            </div>
+        </div>
         </div>
         `;
     });
