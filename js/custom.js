@@ -208,6 +208,7 @@ function removeFrmCart (id) {
             cartDom.innerHTML = `<p class="text-danger text-center">There are no Products in your Cart</p>`;
         }
     }
+    totalCost();
 }
 
 function incQty (id) {
@@ -252,7 +253,8 @@ function incQty (id) {
     } else {
         cartSpanDom.style.display="none";
         cartDom.innerHTML = '';
-    }  
+    }
+    totalCost();  
 }
 
 function decQty (id) {
@@ -298,4 +300,5 @@ function decQty (id) {
         cartSpanDom.style.display="none";
         cartDom.innerHTML = '';
     }
+    totalCost();
 }

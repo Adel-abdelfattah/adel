@@ -139,6 +139,7 @@ header .right-menu .cart-1 {
 .mini-cart .products {
   overflow-y: scroll;
   height: 60vh;
+  overflow-x: clip;
 }
 
 .mini-cart .products .cart-item img {
