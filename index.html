@@ -91,7 +91,7 @@
                     </a>
                     <a href="fav.html" class="mx-1 position-relative">
                         <i class="far fa-heart fs-4"></i>
-                        <span class="cart-1">0</span>
+                        <span class="cart-1 fav"></span>
                     </a>
     
                     <span class="shop open-cart mx-1 position-relative">
@@ -138,10 +138,11 @@
     <!-- overlay  -->
     <div class="overlay" ></div>
     <!-- overlay  -->
+
     <!-- login Modal -->
     <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog ">
+            <div class="modal-content shadow border-0">
                 <div class="modal-header bg-danger">
                     <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -152,7 +153,8 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                                 else.</small>
                         </div>
@@ -171,11 +173,11 @@
         </div>
     </div>
     <!-- login Modal -->
-    
+
     <!-- register Modal -->
     <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog ">
+            <div class="modal-content shadow border-0">
                 <div class="modal-header bg-danger">
                     <h5 class="modal-title" id="exampleModalLabel">Register</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -238,6 +240,24 @@
         </div>
     </div>
     <!-- register Modal -->
+
+    <!-- preview modal -->
+    <div class="modal fade" id="preview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow border-0">
+                <div class="modal-header bg-danger">
+                    <h5 class="modal-title prev-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body preview-modal">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preview modal -->
     
     <!-- all lage screen -->
     <section>

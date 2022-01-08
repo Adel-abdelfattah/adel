@@ -7,6 +7,8 @@ let cartSpanDom = document.querySelector(".cart");
 let cartDom = document.querySelector(".products");
 let products = JSON.parse(localStorage.getItem('products'));
 let carouselDom = document.querySelector(".carousel-holder");
+let favSpanDom= document.querySelector(".fav");
+     
 
 
 
@@ -43,7 +45,11 @@ if (addedItem.length > 0) {
     cartDom.innerHTML = `<p class="text-danger text-center">There are no Products in your Cart</p>`;
 }
 
-
+let favItem = localStorage.getItem('favProducts') ? JSON.parse(localStorage.getItem('favProducts')) : [];
+if (favItem.length > 0) {
+    favSpanDom.style.display="block";
+    favSpanDom.innerHTML = favItem.length;
+}
 
 $(".open-cart").on("click", function(){
     $(".mini-cart").toggleClass("open-mini-cart");
@@ -62,46 +68,44 @@ $(".close-cart").on("click", function(){
 
 
 
-function drawProducts () {
+function drawFavProducts () {
 
-    let productsInCart = localStorage.getItem('productsInCart') ? JSON.parse(localStorage.getItem('productsInCart')) : [];
+    let favProducts = localStorage.getItem('favProducts') ? JSON.parse(localStorage.getItem('favProducts')) : [];
 
-    if (productsInCart.length ===0) {
-        noProductsDom.innerHTML= `<p>There are no Products in your Cart</p>`;
+    if (favProducts.length ===0) {
+        noProductsDom.innerHTML= `<p>There are no Favourite Items</p>`;
+        favSpanDom.style.display="none";
     } else {
-        console.log(productsInCart);
-        let productsUI = productsInCart.map((item) => {
+        
+        let productsUI = favProducts.map((item) => {
             return `
-            <div class="col-12 my-2 border-bottom py-2">
-                <div class="row justify-content-start align-items-center">
-                    <div class="">
-                        <img src="${item.imgUrl}">
-                    </div>
-                    <div class="col flex-grow-1 ">
-                        <div class=" justify-content-start align-items-center row flex-grow-1">
-                            <h2 class="col-12 col-lg-2 my-1 my-lg-0 mx-3 mx-lg-auto">${item.title}</h2>
-                            <p class="col-12 col-lg-2 my-1 my-lg-0 mx-3 mx-lg-auto h5 text-success"><span class="pr-2 text-dark">price</span>$${item.price}</p>
-                            <div class="col-12 col-lg-2 my-1 my-lg-0 mx-3 mx-lg-auto d-flex qty align-items-center">
-                                <div class="dec mr-2"><i class="fa fa-minus badge-danger rounded-circle p-1 hvr-pop" onclick="decQty(${item.id})"></i></div>
-                                <div class="numb mx-2 text-success h5 mb-0">${item.qty}</div>
-                                <div class="dec mx-2"><i class="fa fa-plus badge-danger rounded-circle p-1 hvr-pop" onclick="incQty(${item.id})"></i></div>
-                            </div>
-                            <p class="col-12 col-lg-2 my-1 my-lg-0 mx-3 mx-lg-auto h5 pr-2 text-success"><span class="pr-2 text-dark">Total</span>$${item.price * item.qty}</p>
-                            <div class="col-lg-2 mx-lg-auto mx-3 my-1 my-lg-0">
-                                <button class="add-cart btn btn-danger" onclick="removeFrmCart(${item.id})"><i class="fas fa-trash mr-2"></i>Remove</button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 d-none d-sm-block px-3 mt-3">
+            <div class="row mx-0">
+            <div class="overflow-hidden position-relative card-carousel col-12 px-0">
+                <img src="${item.imgUrl}"  alt="sporty" class="w-100" >
+                <div class="bton-grp position-absolute d-flex justify-content-between">
+                    <button class="add-cart btn btn-danger px-3 py-1 mx-1" data-toggle="modal" data-target="#preview" onclick="preview(${item.id})"><i class="fas fa-expand-alt"></i></button>
+                    <button class="add-cart btn btn-danger px-3 py-1 mx-1" onclick="addToFav(${item.id})"><i class="fas fa-heart"></i></button>
+                    <button class="add-cart btn btn-danger px-3 py-1 mx-1" onclick="addToCart(${item.id})"><i class="fas fa-shopping-bag  "></i></button>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="">
+                    <h6 onclick="saveItemId(${item.id})" class="details">${item.title}</h6>
+                    <h5 class="text-success">$${item.price}<img src="${item.starImgUrl}" class="w-25 ml-2"></h5>
+                </div>
+            </div>
+         </div>
+         </div>
             `;
         });
         productDom.innerHTML = productsUI.join('');
         noProductsDom.innerHTML= '';
-        totalCost();
+        favSpanDom.style.display="block";
+        favSpanDom.innerHTML = favItem.length;
     }
 }
-drawProducts();
+drawFavProducts();
 
 function removeFrmCart (id) {
     let productsInCart = localStorage.getItem('productsInCart');
@@ -115,8 +119,6 @@ function removeFrmCart (id) {
         if (filteredItems.length < 1) {
             cartSpanDom.style.display="none";
             cartDom.innerHTML = `<p class="text-danger text-center">There are no Products in your Cart</p>`;
-            noProductsDom.innerHTML= `<p>There are no Products in your Cart</p>`;
-            productDom.innerHTML ='';
         } else {
             cartDom.innerHTML = '';
             filteredItems.forEach(item => {
@@ -145,18 +147,10 @@ function removeFrmCart (id) {
     </div>`;
                 
             cartSpanDom.style.display="block";
-            cartSpanDom.innerHTML = filteredItems.length;
-            drawProducts();
-            console.log("ffhgfh");
-            console.log(filteredItems.length);
-            
+            cartSpanDom.innerHTML = filteredItems.length; 
         })
         }
-        totalCost();
-        drawProducts();
-
-        
-        
+        totalCost(); 
     }
 }
 
@@ -168,7 +162,6 @@ function incQty (id) {
         item.qty += 1;
     }
     localStorage.setItem('productsInCart', JSON.stringify(items));
-    drawProducts(items);
     if (items.length > 0) {
         cartDom.innerHTML = '';
         items.forEach(item => {
@@ -214,7 +207,6 @@ function decQty (id) {
         item.qty -= 1; 
     } 
     localStorage.setItem('productsInCart', JSON.stringify(items));
-    drawProducts(items);
     if (items.length > 0) {
         cartDom.innerHTML = '';
         items.forEach(item => {
@@ -252,8 +244,6 @@ function decQty (id) {
     totalCost();
 }
 
-
-
 function totalCost() {
     let productsInCart = localStorage.getItem('productsInCart');
     let items = JSON.parse(productsInCart);
@@ -265,16 +255,11 @@ function totalCost() {
         cost += item.price * item.qty;
     });
     
-    tCost.innerHTML = `
-    <h3 class="float-right mr-5">Subtotal  <span class="text-success">$${cost.toFixed(2)}</span></h3>
     
-    `;
     totCost.innerHTML = `
     <h3 class="float-right mr-5">Subtotal  <span class="text-success">$${cost.toFixed(2)}</span></h3>
-    
     `;
     } else {
-        tCost.innerHTML = '';
         totCost.innerHTML = '';
     }
 }
@@ -382,7 +367,31 @@ function addToCart(id) {
     cartSpanDom.style.display="block";
     cartSpanDom.innerHTML = cartItemsNumber.length;
     totalCost();
-    drawProducts(); 
+}
+
+
+function addToFav(id) {
+    let favItem = localStorage.getItem('favProducts') ? JSON.parse(localStorage.getItem('favProducts')) : [];
+    let product = products.find((item) => item.id ===id);
+
+    let isProductInCart = favItem.some((i) => i.id ===product.id);
+    if (isProductInCart) {
+        favItem = favItem.map((p) => {
+        if (p.id === product.id) p.qty += 1;
+        return p;
+        });
+    } else {
+        favItem.push(product);
+    }
+
+    
+
+    localStorage.setItem('favProducts', JSON.stringify(favItem));
+    let favItemsNumber = document.querySelectorAll(".fav-item");
+    favSpanDom.style.display="block";
+    favSpanDom.innerHTML = favItemsNumber.length;
+    
+    drawFavProducts(); 
 }
 
 function preview(id){

@@ -23,16 +23,14 @@
         <nav class="navbar navbar-expand-lg align-items-center navbar-light bg-white shadow fixed-top">
             <div class="container">
                 <!-- logo -->
-                <a class="navbar-brand col-sm-12 col-lg-auto text-center" href="#">NADA<i
-                        class="fas fa-heart fs-6"></i></a>
-
+                <a class="navbar-brand col-sm-12 col-lg-auto text-center" href="#">NADA<i class="fas fa-heart fs-6"></i></a>
+    
                 <!-- toggler -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <!-- start navigation menu -->
                 <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav align-content-center mx-3 mx-lg-auto display-6 px-3 px-lg-0">
@@ -68,7 +66,7 @@
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
-
+    
                         <li class="nav-item ">
                             <a class="nav-link hvr-underline-from-center" href="contact.html">
                                 CONTACT
@@ -77,7 +75,7 @@
                     </ul>
                 </div>
                 <!-- end navigation menu-->
-
+    
                 <!-- start login & register  -->
                 <div class="login-menu mx-auto d-none d-lg-block">
                     <a class="mx-1 " data-toggle="modal" data-target="#login" href="#">LOGIN</a>
@@ -85,21 +83,21 @@
                     <a class="mx-1" data-toggle="modal" data-target="#register" href="#">REGISTER</a>
                 </div>
                 <!-- end login & register  -->
-
+    
                 <!-- start shopping  -->
-                <div class="right-menu mx-3 d-sm-block h4 my-auto">
+                <div class="right-menu mx-3 d-sm-block h4 my-auto ">
                     <a href="#" class="mx-1 cart-link" data-toggle="modal" data-target="#search">
                         <i class="fas fa-search fs-4"></i>
                     </a>
                     <a href="fav.html" class="mx-1 position-relative">
                         <i class="far fa-heart fs-4"></i>
-                        <span class="cart-1">0</span>
+                        <span class="cart-1 fav"></span>
                     </a>
-
-                    <a href="cart.html" class="shop mx-1 position-relative">
-                        <i class="fas fa-bag-shopping fs-4"></i>
-                        <span class="cart">0</span>
-                    </a>
+    
+                    <span class="shop open-cart mx-1 position-relative">
+                        <i class="fas fa-bag-shopping fs-4 "></i>
+                        <span class="cart"></span>
+                    </span>
                 </div>
                 <!-- end shopping  -->
             </div>
@@ -108,10 +106,43 @@
     <div class="nav-fix"></div>
     <!-- navigation -->
 
+    <!-- mini cart  -->
+    <div class="mini-cart bg-light shadow row align-content-start" >
+        <div class="col-12 p-0">
+            <div class="cart-title row justify-content-between align-items-center py-4 border-bottom  mx-0 px-4 mb-1">
+                <div class="h5 text-uppercase c-title">Shopping cart</div>
+                <i class="fa fa-close hvr-buzz-out h3 close-cart"></i>
+            </div>
+        </div>
+        <div class="products col-12">
+    
+        </div>
+        <div class="col-12">
+            <div class="row align-items-center justify-content-between total-cost px-5 border-danger border-top pt-2">
+                
+            </div>
+        </div>
+        <div class="col-12 text-center view-cart mt-3">
+            <a href="cart.html">
+                <button class="btn btn-danger">View Cart</button>
+            </a>
+        </div>
+        <div class="col-12 text-center view-cart mt-3">
+            <a href="cart.html">
+                <button class="btn btn-primary">Check Out</button>
+            </a>
+        </div>
+    </div>
+    <!-- mini cart  -->
+
+    <!-- overlay  -->
+    <div class="overlay" ></div>
+    <!-- overlay  -->
+
     <!-- login Modal -->
     <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog ">
+            <div class="modal-content shadow border-0">
                 <div class="modal-header bg-danger">
                     <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -145,8 +176,8 @@
 
     <!-- register Modal -->
     <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog ">
+            <div class="modal-content shadow border-0">
                 <div class="modal-header bg-danger">
                     <h5 class="modal-title" id="exampleModalLabel">Register</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -210,12 +241,97 @@
     </div>
     <!-- register Modal -->
 
+    <!-- about us -->
+    <main class="main-info">
+        <div class="container-fluid text-uppercase text-center text-white info-head position-relative px-0">
+            <h3 class="position-absolute">about Us</h3>
+            <div class="overlay-1 position-absolute w-100"></div>
+        </div>
+        <div class="container about-info mt-5">
+            <div>
+                <div class="row ">
+                    <div class="col-12 col-md-6 mt-4">
+                        <h5 class=""><strong>OUR MISSION</strong></h5>
+                        <p class="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <em>totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae</em> vitae dicta sunt explicabo nemo enim ipsam.</p>
+                    </div>
+                    <div class="col-12 col-md-6 mt-4">
+                        <h5 class=""><strong>OUR STORIES</strong></h5>
+                        <p class="">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="col-12 col-md-6 mt-4">
+                        <h5 class="fs__20"><strong>OUR APPROACH</strong></h5>
+                        <p class="mg__0">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    </div>
+                    <div class="col-12 col-md-6  mt-4">
+                        <h5 class="fs__20"><strong>OUR PHILOSOPHY</strong></h5>
+                        <p class="mg__0">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Quis nostrum exercitationem ullam.</p>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <blockquote class="bg-light">
+                            <p> I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Quis nostrum exercitationem ullam.</p>
+                        </blockquote>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3">
+                        <div class=" pb-2 position-relative text-center about-team-1">
+                            <div class="">
+                                <picture ><img src="img/about-1.jpg" class="w-100">
+                                </picture>
+                            </div>
+                            <h4 class="mt-2 ">Henry Cavill</h4>
+                            <span>CEO Manager</span>
+                            <div class="position-absolute about-team">
+                                <a class="facebook" href="#">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a class="twitter" href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3">
+                        <div class=" pb-2 position-relative text-center about-team-1">
+                            <div class="">
+                                <picture ><img src="img/about-2.jpg" class="w-100">
+                                </picture>
+                            </div>
+                            <h4 class="mt-2 ">Nathan Aké</h4>
+                            <span>Creative Director</span>
+                            <div class="position-absolute about-team">
+                                <a class="facebook" href="#">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a class="twitter" href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3">
+                        <div class=" pb-2 position-relative text-center about-team-1">
+                            <div class="">
+                                <picture ><img src="img/about-3.jpg" class="w-100">
+                                </picture>
+                            </div>
+                            <h4 class="mt-2 ">Emily Radcliffe</h4>
+                            <span>Front end Developer</span>
+                            <div class="position-absolute about-team">
+                                <a class="facebook" href="#">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a class="twitter" href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- contact us -->
 
-
-
-    
-
-
+    <hr>
     <!-- start footer -->
     <footer class="Footer">
         <div class="container">
@@ -273,9 +389,7 @@
         AOS.init();
     </script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="js/about.js"></script>
 </body>
-
-</html>
 
 </html>

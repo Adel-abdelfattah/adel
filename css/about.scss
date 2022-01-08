@@ -64,12 +64,19 @@ header{
         }
     }
     .right-menu{
-        a{
+        
+        a {
             color: rgba(0,0,0,.55);
             &:hover{
                 color: $mainColor;
                 font-weight: bolder;
-                
+            }
+        }
+        .shop {
+            color: rgba(0,0,0,.55);
+            &:hover{
+                color: $mainColor;
+                font-weight: bolder;
             }
         }
         .cart {
@@ -85,11 +92,12 @@ header{
             border-radius: 50%;
             z-index: 0;
             color: white;
+            display: none;
         }
         .cart-1{
             @extend .cart;
             right: -5px;
-        }
+        } 
     }
 }
 .nav-fix{
@@ -98,15 +106,200 @@ header{
         margin-top: 86px;                 
     }
 }
+.mini-cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    border-right: 1px solid rgba(0,0,0,.2);
+    transform: translateX(100%);
+    bottom: 0;
+    z-index: 1045;
+   
+    background-color: #fff;
+    
+    transition: transform .3s ease-in-out;
+    
+    .cart-title{
+        
+        .c-title {
+
+        }
+        .close-cart {
+            cursor: pointer;
+        }
+    }
+    
+    .view-cart {
+        a {
+            display: inline-block;
+            width: 100%;
+            .btn {
+                width: 80%;
+                border-radius: 20px;
+            }
+        }
+    }
+    .products {
+        overflow-y: scroll;
+        height: 60vh;
+        overflow-x: clip;
+        .cart-item {
+            
+            img{
+                width: 150px;
+                height: 160px;
+            }
+            .dec{
+                cursor: pointer;
+            }
+        }
+      }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 1044;
+    display: none;
+}
+.open-mini-cart{
+    transform: none !important;
+}
+.show-overlay{
+    display: block !important;
+}
 // end header 
 
 
-.carousel-p {
-    color: #B750F3;
-    font-family: 'Poppins', sans-serif;
+
+
+
+.card-carousel {
+    cursor: pointer;
+    width: 100%;
+    img {
+        height: 300px;
+        transition: all 1s;
+    }
+    .bton-grp {
+        display: flex;
+        max-width: 100%;
+        height: 50px;
+        padding: 0 5px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 50;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        button {
+            border-radius: 50%;
+            i{
+               font-size: 20px; 
+            }
+        }
+    }
+    &:hover {
+        .bton-grp{
+            opacity: 1;
+            visibility: visible;
+            top: 50%;
+        }
+        img {
+            transform: scale(1.1, 1.1);
+        }
+    }
+    
+}
+.details{
+    cursor: pointer;
+    &:hover{
+        color: skyblue;
+    }
 }
 
 
+
+.main-info {
+    .info-head {
+        padding: 65px 0;
+        background-image: url("../img/contact.jpg");
+        h3{
+            z-index: 2;
+            left: 43%;
+            top: 40%;
+        }
+        .overlay-1{
+            top: 0;
+            bottom: 0;
+            opacity: .5;
+            background-color: black;
+            z-index: 1;
+        }
+    }
+    .about-info {
+        p {
+            color: #878787;
+            padding: 15px 0;
+        }
+        blockquote{
+            position: relative;
+            padding: 15px 50px;
+            &::after {
+                position: absolute;
+                content: "“";
+                left: 20px;
+                top: 0px;
+                font-size: 50px;
+                color: rgb(153, 153, 153);
+                z-index: 1;
+                font-family: math;
+            }
+        }
+        
+        .about-team-1 {
+            &::after{
+                content: '';
+                position: absolute;
+                background: rgba(246,246,246,.9);
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all .3s;
+                z-index: 1;
+            }
+            &:hover{
+                &::after{
+                    opacity: .9;
+                    z-index: 1;
+                }
+                .about-team {
+                    z-index: 2;
+                    opacity: 1;
+                }
+            }
+            .about-team {
+                position: absolute!important;
+                bottom: 20px;
+                left: 42%;
+                font-size: 30px;
+                z-index: -1;
+                opacity: 0;
+            }
+        }
+    }
+}
 
 
 // end motivation section 

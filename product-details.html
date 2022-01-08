@@ -87,19 +87,19 @@
                 <!-- end login & register  -->
 
                 <!-- start shopping  -->
-                <div class="right-menu mx-3 d-sm-block h4 my-auto">
+                <div class="right-menu mx-3 d-sm-block h4 my-auto ">
                     <a href="#" class="mx-1 cart-link" data-toggle="modal" data-target="#search">
                         <i class="fas fa-search fs-4"></i>
                     </a>
                     <a href="fav.html" class="mx-1 position-relative">
                         <i class="far fa-heart fs-4"></i>
-                        <span class="cart-1">0</span>
+                        <span class="cart-1 fav"></span>
                     </a>
-
-                    <a href="cart.html" class="shop mx-1 position-relative">
-                        <i class="fas fa-bag-shopping fs-4"></i>
-                        <span class="cart">0</span>
-                    </a>
+    
+                    <span class="shop open-cart mx-1 position-relative">
+                        <i class="fas fa-bag-shopping fs-4 "></i>
+                        <span class="cart"></span>
+                    </span>
                 </div>
                 <!-- end shopping  -->
             </div>
@@ -110,8 +110,8 @@
 
     <!-- login Modal -->
     <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog ">
+            <div class="modal-content shadow border-0">
                 <div class="modal-header bg-danger">
                     <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -146,7 +146,7 @@
     <!-- register Modal -->
     <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content shadow border-0">
                 <div class="modal-header bg-danger">
                     <h5 class="modal-title" id="exampleModalLabel">Register</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -210,16 +210,6 @@
     </div>
     <!-- register Modal -->
 
-    <section>
-        <div class="container">
-            <div class="row products-details">
-    
-            </div>
-        </div>
-        <div class="no-products h3 text-center text-danger">
-    
-        </div>
-    </section>
 
     <div class="container product">
         <div class="card">
@@ -234,7 +224,9 @@
                         <p>Pastel Jacket with Bejewelled Collar</p>
                     </div>
                     <div class="images">
-                        <div class="img_girl_left"> <i class="fa fa-angle-up"></i> <span><a href="#"><img src="img/product/product-12.jpg"></a></span> <span><a href="#"><img src="img/product/product-3.jpg"></a></span> <span><a href="#"><img src="img/product/product-10.jpg"></a></span> <i class="fa fa-angle-down"></i> </div> <span><img src="img/product/product-1.jpg"></span>
+                        <div class="img_girl_left"> <i class="fa fa-angle-up"></i> <span><a href="#"><img src="img/product/product-12.jpg"></a></span> <span><a href="#"><img src="img/product/product-3.jpg"></a></span> <span><a href="#"><img src="img/product/product-10.jpg"></a></span> <i class="fa fa-angle-down"></i> </div> <span class="products-details">
+
+                        </span>
                     </div>
                     <div class="right_women_img m_top"> <span><a href="#"><img src="../img/product/product-13.jpg"></a></span> <span><a href="#"><img src="../img/product/product-14.jpg"></a></span> </div>
                 </div>

@@ -6,7 +6,7 @@ let openCartDom = document.querySelector(".open-cart");
 let cartSpanDom = document.querySelector(".cart");
 let products = JSON.parse(localStorage.getItem('products'));
 let overLayDom = document.querySelector(".overlay");
-
+let favSpanDom = document.querySelector(".fav");
 
 
 
@@ -26,23 +26,24 @@ $(".close-cart").on("click", function(){
     $(".overlay").toggleClass("show-overlay");
 })
 
+
 function drawProducts () {
     let productsUI = products.map((item) => {
         return `
-        <div class="col-lg-3 col-md-4 col-sm-6 d-none d-sm-block px-3 mt-3">
+        <div class="col-lg-3 col-md-4 col-sm-6 d-none d-sm-block px-3 mt-4">
         <div class="row mx-0">
             <div class="overflow-hidden position-relative card-carousel col-12 px-0">
                 <img src="${item.imgUrl}"  alt="sporty" class="w-100" >
                 <div class="bton-grp position-absolute d-flex justify-content-between">
-                    <button class="add-cart btn btn-danger px-3 py-1 mx-1" onclick="addToCart(${item.id})"><i class="fas fa-shopping-bag  "></i></button>
+                    <button class="add-cart btn btn-danger px-3 py-1 mx-1" data-toggle="modal" data-target="#preview" onclick="preview(${item.id})"><i class="fas fa-expand-alt"></i></button>
                     <button class="add-cart btn btn-danger px-3 py-1 mx-1" onclick="addToFav(${item.id})"><i class="fas fa-heart"></i></button>
+                    <button class="add-cart btn btn-danger px-3 py-1 mx-1" onclick="addToCart(${item.id})"><i class="fas fa-shopping-bag  "></i></button>
                 </div>
             </div>
             <div class="col-12">
-                <div class="row">
-                    <h5 onclick="saveItemData(${item.id})" class="col-12 pl-2">${item.title}</h5>
-                    <h5 class="col-6 px-0 w-100"><img src="${item.starImgUrl}" class="w-100"></h5>
-                    <h2 class="col-6 text-success align-middle">$${item.price}</h2>
+                <div class="">
+                    <h6 onclick="saveItemId(${item.id})" class="details">${item.title}</h6>
+                    <h5 class="text-success">$${item.price}<img src="${item.starImgUrl}" class="w-25 ml-2"></h5>
                 </div>
             </div>
         </div>
@@ -56,7 +57,7 @@ drawProducts();
 
 let addedItem = localStorage.getItem('productsInCart') ? JSON.parse(localStorage.getItem('productsInCart')) : [];
 if (addedItem.length > 0) {
-        addedItem.map(item => {
+    addedItem.map(item => {
         cartDom.innerHTML += `
         <div class="cart-item col-12 my-2 border-bottom py-2">
             <div class="row justify-content-start align-items-center">
@@ -82,16 +83,20 @@ if (addedItem.length > 0) {
         </div>`;
         cartSpanDom.style.display="block";
         cartSpanDom.innerHTML = addedItem.length;
-    });
-    totalCost();
-}else {
+    })
+} else {
     cartDom.innerHTML = `<p class="text-danger text-center">There are no Products in your Cart</p>`;
 }
 
+let favItem = localStorage.getItem('favProducts') ? JSON.parse(localStorage.getItem('favProducts')) : [];
+if (favItem.length > 0) {
+    favSpanDom.style.display="block";
+    favSpanDom.innerHTML = favItem.length;
+}
 // add to cart 
 
 function addToCart(id) {
-    
+    let addedItem = localStorage.getItem('productsInCart') ? JSON.parse(localStorage.getItem('productsInCart')) : [];
     let product = products.find((item) => item.id ===id);
 
     let isProductInCart = addedItem.some((i) => i.id ===product.id);
@@ -142,7 +147,7 @@ function addToCart(id) {
 
 
 
-function saveItemData(id) {
+function saveItemId(id) {
     localStorage.setItem('productId', id);
     window.location = "product-details.html";
 }
@@ -307,4 +312,34 @@ function decQty (id) {
         cartDom.innerHTML = '';
     }
     totalCost();
+}
+
+function addToFav(id) {
+    let favItem = localStorage.getItem('favProducts') ? JSON.parse(localStorage.getItem('favProducts')) : [];
+    let product = products.find((item) => item.id ===id);
+
+    let isProductInCart = favItem.some((i) => i.id ===product.id);
+    if (isProductInCart) {
+        favItem = favItem.map((p) => {
+        if (p.id === product.id) p.qty += 1;
+        return p;
+        });
+    } else {
+        favItem.push(product);
+    }
+    
+    favSpanDom.style.display="block";
+    favSpanDom.innerHTML = favItem.length;
+    localStorage.setItem('favProducts', JSON.stringify(favItem));
+    
+}
+
+
+function preview(id){
+    let prevModalTitle = document.querySelector(".prev-title");
+    let prevModalImg = document.querySelector(".preview-modal");
+    let product = products.find((item) => item.id ===id);
+
+    prevModalImg.innerHTML=  `<img src="${product.imgUrl}" class="w-100">`;
+    prevModalTitle.innerHTML=  product.title;
 }

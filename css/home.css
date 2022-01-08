@@ -222,6 +222,14 @@ header .right-menu .cart-1 {
           transform: scale(1.1, 1.1);
 }
 
+.details {
+  cursor: pointer;
+}
+
+.details:hover {
+  color: skyblue;
+}
+
 .Footer {
   padding: 50px 0;
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=Lobster+Two:400,400i,700,700i");
@@ -66,6 +67,15 @@ header .right-menu a:hover {
   font-weight: bolder;
 }
 
+header .right-menu .shop {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+header .right-menu .shop:hover {
+  color: tomato;
+  font-weight: bolder;
+}
+
 header .right-menu .cart, header .right-menu .cart-1 {
   position: absolute;
   top: -11px;
@@ -79,6 +89,7 @@ header .right-menu .cart, header .right-menu .cart-1 {
   border-radius: 50%;
   z-index: 0;
   color: white;
+  display: none;
 }
 
 header .right-menu .cart-1 {
@@ -93,6 +104,204 @@ header .right-menu .cart-1 {
   .nav-fix {
     margin-top: 86px;
   }
+}
+
+.mini-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  bottom: 0;
+  z-index: 1045;
+  background-color: #fff;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.mini-cart .cart-title .close-cart {
+  cursor: pointer;
+}
+
+.mini-cart .view-cart a {
+  display: inline-block;
+  width: 100%;
+}
+
+.mini-cart .view-cart a .btn {
+  width: 80%;
+  border-radius: 20px;
+}
+
+.mini-cart .products {
+  overflow-y: scroll;
+  height: 60vh;
+  overflow-x: clip;
+}
+
+.mini-cart .products .cart-item img {
+  width: 150px;
+  height: 160px;
+}
+
+.mini-cart .products .cart-item .dec {
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: 1044;
+  display: none;
+}
+
+.open-mini-cart {
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+
+.show-overlay {
+  display: block !important;
+}
+
+.card-carousel {
+  cursor: pointer;
+  width: 100%;
+}
+
+.card-carousel img {
+  height: 300px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.card-carousel .bton-grp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  height: 50px;
+  padding: 0 5px;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 50;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.card-carousel .bton-grp button {
+  border-radius: 50%;
+}
+
+.card-carousel .bton-grp button i {
+  font-size: 20px;
+}
+
+.card-carousel:hover .bton-grp {
+  opacity: 1;
+  visibility: visible;
+  top: 50%;
+}
+
+.card-carousel:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+.details {
+  cursor: pointer;
+}
+
+.details:hover {
+  color: skyblue;
+}
+
+.main-info .info-head {
+  padding: 65px 0;
+  background-image: url("../img/contact.jpg");
+}
+
+.main-info .info-head h3 {
+  z-index: 2;
+  left: 43%;
+  top: 40%;
+}
+
+.main-info .info-head .overlay-1 {
+  top: 0;
+  bottom: 0;
+  opacity: .5;
+  background-color: black;
+  z-index: 1;
+}
+
+.main-info .about-info p {
+  color: #878787;
+  padding: 15px 0;
+}
+
+.main-info .about-info blockquote {
+  position: relative;
+  padding: 15px 50px;
+}
+
+.main-info .about-info blockquote::after {
+  position: absolute;
+  content: "“";
+  left: 20px;
+  top: 0px;
+  font-size: 50px;
+  color: #999999;
+  z-index: 1;
+  font-family: math;
+}
+
+.main-info .about-info .about-team-1::after {
+  content: '';
+  position: absolute;
+  background: rgba(246, 246, 246, 0.9);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  z-index: 1;
+}
+
+.main-info .about-info .about-team-1:hover::after {
+  opacity: .9;
+  z-index: 1;
+}
+
+.main-info .about-info .about-team-1:hover .about-team {
+  z-index: 2;
+  opacity: 1;
+}
+
+.main-info .about-info .about-team-1 .about-team {
+  position: absolute !important;
+  bottom: 20px;
+  left: 42%;
+  font-size: 30px;
+  z-index: -1;
+  opacity: 0;
 }
 
 .Footer {
@@ -158,4 +367,373 @@ header .right-menu .cart-1 {
   text-transform: uppercase;
 }
 
+.card0 {
+  position: relative;
+  width: 48vw;
+  height: 50vw;
+  background-image: url("../img/categories/category-2.jpg");
+  background-position: 0 -100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 4%;
+  margin-bottom: 2.5%;
+}
 
+.cardcontent {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.cardcontent h1 {
+  font-family: 'Cookie', cursive;
+  color: tomato;
+}
+
+.cardcontent p {
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+}
+
+.cardcontent a {
+  color: black;
+  -webkit-text-decoration-color: red;
+          text-decoration-color: red;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* second product */
+.card1 {
+  position: relative;
+  width: 48.5vw;
+  height: 50vw;
+  background-image: url("../img/categories/category-8.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cardcontent1 {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.cardcontent1 h1 {
+  font-family: 'Cookie', cursive;
+}
+
+.cardcontent1 a {
+  color: black;
+  -webkit-text-decoration-color: red;
+          text-decoration-color: red;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* third product */
+.card2 {
+  position: relative;
+  width: 32vw;
+  height: 25vw;
+  background-image: url("../img/categories/category-6.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cardcontent2 {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.cardcontent2 h1 {
+  font-family: 'Cookie', cursive;
+}
+
+.cardcontent2 a {
+  color: black;
+  -webkit-text-decoration-color: red;
+          text-decoration-color: red;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* forth product */
+.card3 {
+  position: relative;
+  width: 31vw;
+  height: 25vw;
+  background-image: url("../img/categories/category-3.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 1%;
+}
+
+.cardcontent3 {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.cardcontent3 h1 {
+  font-family: 'Cookie', cursive;
+}
+
+.cardcontent3 a {
+  color: black;
+  -webkit-text-decoration-color: red;
+          text-decoration-color: red;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* fifth prodcut */
+.card4 {
+  position: relative;
+  width: 31vw;
+  height: 25vw;
+  background-image: url("../img/categories/category-9.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 5%;
+  margin-bottom: 2.5%;
+}
+
+.cardcontent4 {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.cardcontent4 h1 {
+  font-family: 'Cookie', cursive;
+}
+
+.cardcontent4 a {
+  -webkit-text-decoration-color: red;
+          text-decoration-color: red;
+  font-family: 'Roboto', sans-serif;
+}
+
+.carousel {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Make the image fully responsive */
+  .carousel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  .carousel-caption h1 {
+    font-family: 'Cookie', cursive;
+  }
+  .carousel-caption a {
+    color: black;
+    -webkit-text-decoration-color: red;
+            text-decoration-color: red;
+    font-family: 'Roboto', sans-serif;
+  }
+  .carouselimg {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/categories/category-2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg1 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/categories/category-8.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg2 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/categories/category-6.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg3 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("..img/categories/category-3.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg4 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/categories/category-9.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  /* for section 3 */
+  .carouselimg5 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-1.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg6 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-2.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg7 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-3.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg8 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-4.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg9 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-5.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg10 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-6.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg11 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-7.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg12 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-8.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg13 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-9.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg14 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-10.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg15 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-11.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .carouselimg16 {
+    width: 100vw;
+    height: 100vw;
+    background-image: url("../img/product/product-12.jpg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  /* forthsection background adjustment */
+  .fsection {
+    background-position: center;
+  }
+}
+
+/* third section */
+.card {
+  border: none !important;
+}
+
+.small {
+  font-family: 'Oswald', sans-serif;
+  font-size: 120% !important;
+}
+
+.thirdsectionh2 {
+  font-family: 'Cookie', cursive;
+  font-size: 10vw;
+  color: black;
+}
+
+/* forthsection style sheet */
+.fsection {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/banner/banner-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.fsection h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2vw;
+  color: tomato;
+  text-align: center;
+  padding-top: 3%;
+}
+
+.fsection h2 {
+  font-family: 'Cookie', cursive;
+  font-size: 8vw;
+  color: black;
+  text-align: center;
+}
+
+.fsection h3 {
+  text-align: center;
+}
+
+.fsection a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2vw;
+  color: black;
+  text-align: center;
+  -webkit-text-decoration-color: coral;
+          text-decoration-color: coral;
+}
+/*# sourceMappingURL=about.css.map */
