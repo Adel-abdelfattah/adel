@@ -30,7 +30,7 @@ $(".close-cart").on("click", function(){
 function drawProducts () {
     let productsUI = products.map((item) => {
         return `
-        <div class="col-lg-3 col-md-4 col-sm-6 d-none d-sm-block px-3 mt-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 px-3 mt-4">
         <div class="row mx-0">
             <div class="overflow-hidden position-relative card-carousel col-12 px-0">
                 <img src="${item.imgUrl}"  alt="sporty" class="w-100" >
@@ -112,7 +112,7 @@ function addToCart(id) {
     cartDom.innerHTML = '';
     addedItem.forEach(item => {
         cartDom.innerHTML += `
-        <div class="cart-item col-12 my-2 border-bottom py-2">
+        <div class="cart-item col-12 my-2 border-bottom py-2 ">
             <div class="row justify-content-start align-items-center">
                 <div class="">
                     <img src="${item.imgUrl}">

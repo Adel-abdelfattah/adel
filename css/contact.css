@@ -237,8 +237,7 @@ header .right-menu .cart-1 {
 
 .main-contact .contact-head h3 {
   z-index: 2;
-  left: 43%;
-  top: 40%;
+  position: relative;
 }
 
 .main-contact .contact-head .overlay-1 {
