@@ -35,7 +35,7 @@ if (addedItem.length > 0) {
     addedItem.map(item => {
         cartDom.innerHTML += `
         <div class="cart-item col-12 my-2 border-bottom py-2">
-            <div class="row justify-content-start align-items-center">
+            <div class="row justify-content-start align-items-stretch">
                 <div class="">
                     <img src="${item.imgUrl}">
                 </div>
@@ -88,7 +88,7 @@ function addToCart(id) {
     addedItem.forEach(item => {
         cartDom.innerHTML += `
         <div class="cart-item col-12 my-2 border-bottom py-2">
-            <div class="row justify-content-start align-items-center">
+            <div class="row justify-content-start align-items-stretch">
                 <div class="">
                     <img src="${item.imgUrl}">
                 </div>
@@ -164,7 +164,7 @@ function removeFrmCart (id) {
                 filteredItems.forEach(item => {
                 cartDom.innerHTML += `
                 <div class="cart-item col-12 my-2 border-bottom py-2">
-            <div class="row justify-content-start align-items-center">
+            <div class="row justify-content-start align-items-stretch">
                 <div class="">
                     <img src="${item.imgUrl}">
                 </div>
@@ -211,7 +211,7 @@ function incQty (id) {
         items.forEach(item => {
         cartDom.innerHTML += `
         <div class="cart-item col-12 my-2 border-bottom py-2">
-            <div class="row justify-content-start align-items-center">
+            <div class="row justify-content-start align-items-stretch">
                 <div class="">
                     <img src="${item.imgUrl}">
                 </div>
@@ -257,7 +257,7 @@ function decQty (id) {
         items.forEach(item => {
         cartDom.innerHTML += `
         <div class="cart-item col-12 my-2 border-bottom py-2">
-            <div class="row justify-content-start align-items-center">
+            <div class="row justify-content-start align-items-stretch">
                 <div class="">
                     <img src="${item.imgUrl}">
                 </div>

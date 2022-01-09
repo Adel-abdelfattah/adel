@@ -150,7 +150,7 @@ header{
             
             img{
                 width: 150px;
-                height: 160px;
+                height: 100%;
             }
             .dec{
                 cursor: pointer;
@@ -191,20 +191,6 @@ header{
 }
 
 
-.product-holder{
-    tr{
-        td{
-            img{
-                width: 100px;
-                height: 100px;
-            }
-        }
-    }
-}
-.carousel-p {
-    color: #B750F3;
-    font-family: 'Poppins', sans-serif;
-}
 
 
  
@@ -213,31 +199,14 @@ header{
   .product-holder{
       img{
           width: 150px;
-          height: 150px;
+
       }
       .dec{
           cursor: pointer;
       }
   }
-// end motivation section 
-// strat video section 
-
-// end video section
-
-// start Creative Design section 
-
-// end Creative Design section 
-
-// star agency section 
-
-// end agency section
-
-// start about us carousel
 
 
- 
-
-// end about us carou
 .Footer{
     padding: 50px 0;
 }

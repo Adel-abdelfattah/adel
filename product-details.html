@@ -23,16 +23,14 @@
         <nav class="navbar navbar-expand-lg align-items-center navbar-light bg-white shadow fixed-top">
             <div class="container">
                 <!-- logo -->
-                <a class="navbar-brand col-sm-12 col-lg-auto text-center" href="#">NADA<i
-                        class="fas fa-heart fs-6"></i></a>
-
+                <a class="navbar-brand col-sm-12 col-lg-auto text-center" href="#">NADA<i class="fas fa-heart fs-6"></i></a>
+    
                 <!-- toggler -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <!-- start navigation menu -->
                 <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav align-content-center mx-3 mx-lg-auto display-6 px-3 px-lg-0">
@@ -68,7 +66,7 @@
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
-
+    
                         <li class="nav-item ">
                             <a class="nav-link hvr-underline-from-center" href="contact.html">
                                 CONTACT
@@ -77,7 +75,7 @@
                     </ul>
                 </div>
                 <!-- end navigation menu-->
-
+    
                 <!-- start login & register  -->
                 <div class="login-menu mx-auto d-none d-lg-block">
                     <a class="mx-1 " data-toggle="modal" data-target="#login" href="#">LOGIN</a>
@@ -85,7 +83,7 @@
                     <a class="mx-1" data-toggle="modal" data-target="#register" href="#">REGISTER</a>
                 </div>
                 <!-- end login & register  -->
-
+    
                 <!-- start shopping  -->
                 <div class="right-menu mx-3 d-sm-block h4 my-auto ">
                     <a href="#" class="mx-1 cart-link" data-toggle="modal" data-target="#search">
@@ -107,6 +105,39 @@
     </header>
     <div class="nav-fix"></div>
     <!-- navigation -->
+
+    <!-- mini cart  -->
+    <div class="mini-cart bg-light shadow row align-content-start" >
+        <div class="col-12 p-0">
+            <div class="cart-title row justify-content-between align-items-center py-4 border-bottom  mx-0 px-4 mb-1">
+                <div class="h5 text-uppercase c-title">Shopping cart</div>
+                <i class="fa fa-close hvr-buzz-out h3 close-cart"></i>
+            </div>
+        </div>
+        <div class="products col-12">
+    
+        </div>
+        <div class="col-12">
+            <div class="row align-items-center justify-content-between total-cost px-5 border-danger border-top pt-2">
+                
+            </div>
+        </div>
+        <div class="col-12 text-center view-cart mt-3">
+            <a href="cart.html">
+                <button class="btn btn-danger">View Cart</button>
+            </a>
+        </div>
+        <div class="col-12 text-center view-cart mt-3">
+            <a href="cart.html">
+                <button class="btn btn-primary">Check Out</button>
+            </a>
+        </div>
+    </div>
+    <!-- mini cart  -->
+
+    <!-- overlay  -->
+    <div class="overlay" ></div>
+    <!-- overlay  -->
 
     <!-- login Modal -->
     <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -145,7 +176,7 @@
 
     <!-- register Modal -->
     <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog ">
             <div class="modal-content shadow border-0">
                 <div class="modal-header bg-danger">
                     <h5 class="modal-title" id="exampleModalLabel">Register</h5>
@@ -209,6 +240,24 @@
         </div>
     </div>
     <!-- register Modal -->
+
+    <!-- preview modal -->
+    <div class="modal fade" id="preview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow border-0">
+                <div class="modal-header bg-danger">
+                    <h5 class="modal-title prev-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body preview-modal">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preview modal -->
 
 
     <div class="container product">

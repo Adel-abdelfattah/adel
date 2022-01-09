@@ -146,7 +146,7 @@ header{
             
             img{
                 width: 150px;
-                height: 160px;
+                height: 100%;
             }
             .dec{
                 cursor: pointer;
@@ -250,8 +250,12 @@ header{
                 padding: 12px;
                 border-radius: 25px;
                 border: 2px solid transparent;
+                &:hover{
+                    color: #000;
+                }
                 &:focus {   
-                border-color: black;
+                    border-color: black;
+                    color: #000;
                 }
             }
         }

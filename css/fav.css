@@ -144,7 +144,7 @@ header .right-menu .cart-1 {
 
 .mini-cart .products .cart-item img {
   width: 150px;
-  height: 160px;
+  height: 100%;
 }
 
 .mini-cart .products .cart-item .dec {

@@ -144,7 +144,7 @@ header .right-menu .cart-1 {
 
 .mini-cart .products .cart-item img {
   width: 150px;
-  height: 160px;
+  height: 100%;
 }
 
 .mini-cart .products .cart-item .dec {
@@ -181,19 +181,8 @@ header .right-menu .cart-1 {
   margin: 150px auto;
 }
 
-.product-holder tr td img {
-  width: 100px;
-  height: 100px;
-}
-
-.carousel-p {
-  color: #B750F3;
-  font-family: 'Poppins', sans-serif;
-}
-
 .product-holder img {
   width: 150px;
-  height: 150px;
 }
 
 .product-holder .dec {
