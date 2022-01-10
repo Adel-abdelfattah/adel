@@ -7,7 +7,7 @@ let cartSpanDom = document.querySelector(".cart");
 let cartDom = document.querySelector(".products");
 let products = JSON.parse(localStorage.getItem('products'));
 let carouselDom = document.querySelector(".carousel-holder");
-
+let favSpanDom= document.querySelector(".fav");
 
 
 let addedItem = localStorage.getItem('productsInCart') ? JSON.parse(localStorage.getItem('productsInCart')) : [];
@@ -43,7 +43,11 @@ if (addedItem.length > 0) {
     cartDom.innerHTML = `<p class="text-danger text-center">There are no Products in your Cart</p>`;
 }
 
-
+let favItem = localStorage.getItem('favProducts') ? JSON.parse(localStorage.getItem('favProducts')) : [];
+if (favItem.length > 0) {
+    favSpanDom.style.display="block";
+    favSpanDom.innerHTML = favItem.length;
+}
 
 $(".open-cart").on("click", function(){
     $(".mini-cart").toggleClass("open-mini-cart");
